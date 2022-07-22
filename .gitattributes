@@ -1,6 +1,1 @@
-* text=auto
-
-Makefile* text whitespace=-tab-in-indent
-*.sh text eol=lf
-*.md diff=markdown
-*.c# diff=c#
+app/* linguist-documentation=false
