@@ -3,7 +3,7 @@
 
 [![Sarkui](https://raw.githubusercontent.com/sarkinios/sarkui/master/.github/banner.png)](#readme)
 
-[![Release version](https://img.shields.io/github/v/release/sarkinios/sarkui?color=brightgreen&label=Download&style=for-the-badge)](https://github.com/sarkinios/sarkui/releases/download/2022.07.23.v1/SarkUI.v1.0.0.zip)
+[![Windows](https://img.shields.io/badge/-Windows_x64-blue.svg?style=for-the-badge&label=Download&logo=windows)](https://github.com/sarkinios/sarkui/releases/latest/download/SarkUI.v1.0.0.zip)
 [![Donate](https://img.shields.io/badge/_-Donate-red.svg?logo=githubsponsors&labelColor=555555&style=for-the-badge)](https://ko-fi.com/sarkas)
     
 </div>
@@ -76,4 +76,4 @@ After setting the paths you can start using SarkUI.
 
 File|Description
 :---|:---
-[![Windows](https://img.shields.io/badge/-Windows_x64-blue.svg?style=for-the-badge&logo=windows)](https://github.com/sarkinios/sarkui/releases/latest/download/SarkUI.v1.0.0.zip)|Windows (Win10) standalone x64 binary
+[![Windows](https://img.shields.io/github/v/release/sarkinios/sarkui?color=brightgreen&style=for-the-badge)](https://github.com/sarkinios/sarkui/releases/latest/download/SarkUI.v1.0.0.zip)|Windows (Win10) standalone x64 binary
