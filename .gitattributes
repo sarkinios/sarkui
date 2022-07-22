@@ -3,4 +3,4 @@
 Makefile* text whitespace=-tab-in-indent
 *.sh text eol=lf
 *.md diff=markdown
-*.c# diff=python
+*.c# diff=c#
