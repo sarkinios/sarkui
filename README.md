@@ -70,3 +70,10 @@ After setting the paths you can start using SarkUI.
        - Change the tempo, speed or convert the audio files you select in step 1
        - Audio/Sub Renamer: You can include in your video files path subtitle or audio files (srt,mp3,aac etc) and rename/sort them the same as your video files.
          (Due to lexicographic sorting and not natural sort, your sub and audio must have zero in front of their numbering - i.e.  sub 01.srt sub 02.srt etc and not sub 1.srt sub 2.srt otherwise the sorting will not execute correctly) 
+         
+         
+#### Release Files
+
+File|Description
+:---|:---
+[![Windows](https://img.shields.io/badge/-Windows_x64-blue.svg?style=for-the-badge&logo=windows)](https://github.com/sarkinios/sarkui/releases/latest/download/SarkUI.v1.0.0.zip)|Windows (Win10) standalone x64 binary
