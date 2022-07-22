@@ -15,7 +15,7 @@ in all-in-one GUI.
 
 With Sarkui you can add as many files of same type you wish and make changes all at once.
 You can:
-- Change the cover in multiple video files 
+- Change/Add/Remove/Extract the cover in multiple video files 
 - Rename the video tracks metadata title, subtitles and audio tracks name and language
 - Convert media from one packager to another ( mkv to mp4 , ts to mkv etc)
 - Mux/Demux all subtitles or specific language from multiple files with one click 
