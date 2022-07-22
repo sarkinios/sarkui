@@ -6,7 +6,7 @@
 # Table of Contents
 > * [Introduction](#introduction)
 > * [Installation](#installation)
-> * Use
+> * [Using SarkUI](#use)
 
 # Introduction
 
@@ -45,3 +45,13 @@ All these programs can be found free online
 ![options](https://imgur.com/hY2zdya.png)
 
 After setting the paths you can start using SarkUI.
+
+# Use
+
+1. Select the filetype you want to work with and drag n Drop / select from browser button multiple files.
+2. After step 1 you can:
+     - From **Edit Source** Tab:
+       - Change the Cover of all selected files. Select the image you want and click Add Cover. You can Remove Cover from the selected files , or extract it.
+       - Add file Title in mediainfo metadata
+       - If a file contain multiple video/audio/subtitle tracks, you can choose the one you want and change title/language/default track
+     - From **Convert** Tab:
