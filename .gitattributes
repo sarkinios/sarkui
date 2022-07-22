@@ -1,1 +1,3 @@
 *.cs linguist-detectable=true
+*.cs linguist-language=Markdown
+*.cs linguist-documentation=false
