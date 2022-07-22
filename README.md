@@ -37,8 +37,8 @@ Before start using the program you need to configure the location paths under Op
 - [mkvpropedit](https://mkvtoolnix.download/downloads.html)
 - [mkvmerge](https://mkvtoolnix.download/downloads.html)
 - [mkvextract](https://mkvtoolnix.download/downloads.html)
-- [mp4box](https://github.com/gpac/gpac)
-- [sox](http://sox.sourceforge.net/)
+- [mp4box](https://gpac.wp.imt.fr/downloads/)
+- [sox](https://sourceforge.net/projects/sox/files/sox/)
 
 All these programs can be found free online
 
