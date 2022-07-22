@@ -1,9 +1,11 @@
-# sarkui
+# SarkUI
+### All in one media metadata - audio - subtitle renamer muxer demuxer
+### ========================================
+
+
 # Table of Contents
-All in one media metadata - audio - subtitle renamer muxer demuxer
-===================================================================
 > * [Introduction](#introduction)
-> * Installation
+> * [Installation](#installation)
 > * Use
 
 # Introduction
@@ -22,6 +24,24 @@ You can:
 - Rename multiple subtitle and audio files according to video files in the same folder to match the video name.
 Darktheme Included.
 
-gui light             |  gui dark
-:-------------------------:|:-------------------------
+|gui light| gui dark |
+:----------------------:|:----------------------:
 ![image1](https://imgur.com/36VIzQG.png)|![image2](https://imgur.com/Av6UinI.png)
+
+
+# Installation
+
+Download the zip and extract it. The executable is portable and ready to run. 
+Before start using the program you need to configure the location paths under Options for the following programs: 
+- [ffmpeg](https://ffmpeg.org/download.html)
+- [mkvpropedit](https://mkvtoolnix.download/downloads.html)
+- [mkvmerge](https://mkvtoolnix.download/downloads.html)
+- [mkvextract](https://mkvtoolnix.download/downloads.html)
+- [mp4box](https://github.com/gpac/gpac)
+- [sox](http://sox.sourceforge.net/)
+
+All these programs can be found free online
+
+![options](https://imgur.com/hY2zdya.png)
+
+After setting the paths you can start using SarkUI.
