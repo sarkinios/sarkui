@@ -55,3 +55,10 @@ After setting the paths you can start using SarkUI.
        - Add file Title in mediainfo metadata
        - If a file contain multiple video/audio/subtitle tracks, you can choose the one you want and change title/language/default track
      - From **Convert** Tab:
+       - You can one Click Convert the files from step 1 to other packagers
+       - Mux/Import audio and subtitles included in the same path with the files and choose the language before importing them (Subtitles and Audio must have same name as video files)
+       - Demux/Extract subtitles and Audio from the files in step 1. You can choose to export all subtitles or specific language ones (You can check what language files included in the media info button)
+     - From **Misc** Tab:
+       - Change the tempo, speed or convert the audio files you select in step 1
+       - Audio/Sub Renamer: You can include in your video files path subtitle or audio files (srt,mp3,aac etc) and rename/sort them the same as your video files.
+         (Due to lexicographic sorting and not natural sort, your sub and audio must have zero in front of their numbering - i.e.  sub 01.srt sub 02.srt etc and not sub 1.srt sub 2.srt otherwise the sorting will not execute correctly) 
