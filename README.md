@@ -41,12 +41,14 @@ Darktheme Included.
 
 Download the zip and extract it. The executable is portable and ready to run. 
 Before start using the program you need to configure the location paths under Options for the following programs: 
-- [ffmpeg](https://ffmpeg.org/download.html)
-- [mkvpropedit](https://mkvtoolnix.download/downloads.html)
-- [mkvmerge](https://mkvtoolnix.download/downloads.html)
-- [mkvextract](https://mkvtoolnix.download/downloads.html)
-- [mp4box](https://gpac.wp.imt.fr/downloads/)
-- [sox](https://sourceforge.net/projects/sox/files/sox/)
+needed apps| description | package
+:----------------------|:---------------------:|:-----:
+|- [ffmpeg.exe](https://ffmpeg.org/download.html) | tested with latest release| ffmpeg package|
+|- [mkvpropedit.exe](https://mkvtoolnix.download/downloads.html) <br /> - [mkvmerge.exe](https://mkvtoolnix.download/downloads.html)  <br /> - [mkvextract.exe](https://mkvtoolnix.download/downloads.html)  |  tested with latest release|  mkvtoolnix package|
+|- [mp4box.exe](https://gpac.wp.imt.fr/downloads/) |tested with mp4box 0.5.0| gpac package|
+|- [sox.exe](https://sourceforge.net/projects/sox/files/sox/) |tested with latest release| sox package|
+
+
 
 All these programs can be found free online
 
