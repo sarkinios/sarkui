@@ -87,4 +87,4 @@ After setting the paths you can start using SarkUI.
 File|Description
 :---|:---
 [![Windows](https://img.shields.io/github/v/release/sarkinios/sarkui?color=f1fa8c&style=for-the-badge)](https://github.com/sarkinios/sarkui/releases/latest/download/SarkUI.v1.0.1.zip)|Windows (Win10) standalone x64 binary|
-[![Windows](https://img.shields.io/github/v/release/sarkinios/sarkui?color=f1fa8c&style=for-the-badge)](https://github.com/sarkinios/sarkui/releases/download/latest/SarkUI.v1.0.1wTools.zip)|Windows (Win10) standalone x64 binary with ffmpeg/mkvpropedit/mkmerge/mp4box/mkvextract/sox|
+[![Windows](https://img.shields.io/github/v/release/sarkinios/sarkui?color=f1fa8c&style=for-the-badge)](https://github.com/sarkinios/sarkui/releases/download/2022.07.23v1.1/SarkUI.v1.0.1wTools.zip)|Windows (Win10) standalone x64 binary with ffmpeg/mkvpropedit/mkmerge/mp4box/mkvextract/sox|
