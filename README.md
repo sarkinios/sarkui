@@ -44,7 +44,7 @@ Before start using the program you need to configure the location paths under Op
 needed apps| description | package
 :----------------------|:---------------------:|:-----:
 |- [ffmpeg](https://ffmpeg.org/download.html) | tested with latest release| part of ffmpeg package|
-|- [mkvpropedit](https://www.fosshub.com/MKVToolNix.html) <br /> - [mkvmerge.exe](https://www.fosshub.com/MKVToolNix.html)  <br /> - [mkvextract.exe](https://www.fosshub.com/MKVToolNix.html)  |  tested with latest release|  parts of mkvtoolnix package|
+|- [mkvpropedit](https://www.fosshub.com/MKVToolNix.html) <br /> - [mkvmerge](https://www.fosshub.com/MKVToolNix.html)  <br /> - [mkvextract](https://www.fosshub.com/MKVToolNix.html)  |  tested with latest release|  parts of mkvtoolnix package|
 |- [mp4box](https://gpac.wp.imt.fr/downloads/) |tested with mp4box 0.5.0| part of gpac package|
 |- [sox](https://sourceforge.net/projects/sox/files/sox/) |tested with latest release| sox package|
 
