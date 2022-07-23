@@ -3,7 +3,7 @@
 
 [![Sarkui](https://raw.githubusercontent.com/sarkinios/sarkui/master/.github/banner.png)](#readme)
 
-[![Windows](https://img.shields.io/badge/-Windows_x64-blue.svg?style=for-the-badge&label=Download&logo=windows&color=6272a4)](https://github.com/sarkinios/sarkui/releases/latest/download/SarkUI.v1.0.0.zip)
+[![Windows](https://img.shields.io/badge/-Windows_x64-blue.svg?style=for-the-badge&label=Download&logo=windows&color=6272a4)](https://github.com/sarkinios/sarkui/releases/latest/download/SarkUI.v1.0.1.zip)
 [![Crypto](https://img.shields.io/badge/_-Crypto-ffb86c.svg?logo=githubsponsors&labelColor=555555&style=for-the-badge&label=Donate)](https://github.com/sarkinios/sarkui/blob/main/.github/donate.md)
 [![ko-fi](https://img.shields.io/badge/_-Buy_me_a_coffee-red.svg?logo=kofi&labelColor=555555&style=for-the-badge)](https://ko-fi.com/sarkas)
 
@@ -43,7 +43,8 @@ Darktheme Included.
 # Installation
 
 Download the zip and extract it. The executable is portable and ready to run. 
-Before start using the program you need to configure the location paths under Options for the following programs: 
+Before start using the program you need to configure the location paths under Options for ALL the following programs: 
+
 needed apps| description | package
 :----------------------|:---------------------:|:-----:
 |- [ffmpeg](https://ffmpeg.org/download.html) | tested with latest release| part of ffmpeg package|
@@ -85,4 +86,5 @@ After setting the paths you can start using SarkUI.
 
 File|Description
 :---|:---
-[![Windows](https://img.shields.io/github/v/release/sarkinios/sarkui?color=f1fa8c&style=for-the-badge)](https://github.com/sarkinios/sarkui/releases/latest/download/SarkUI.v1.0.0.zip)|Windows (Win10) standalone x64 binary
+[![Windows](https://img.shields.io/github/v/release/sarkinios/sarkui?color=f1fa8c&style=for-the-badge)](https://github.com/sarkinios/sarkui/releases/latest/download/SarkUI.v1.0.1.zip)|Windows (Win10) standalone x64 binary|
+[![Windows](https://img.shields.io/github/v/release/sarkinios/sarkui?color=f1fa8c&style=for-the-badge)](https://github.com/sarkinios/sarkui/releases/download/latest/SarkUI.v1.0.1wTools.zip)|Windows (Win10) standalone x64 binary with ffmpeg/mkvpropedit/mkmerge/mp4box/mkvextract/sox|
