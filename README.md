@@ -89,6 +89,8 @@ After setting the paths you can start using SarkUI.
 Only need to add ALL exe paths in Options to start working with SarKUI.
 (Refer to each application's repo/site for license and fair use)
 
+[![Changelog](https://img.shields.io/badge/changelog-blue.svg)](https://github.com/sarkinios/sarkui/releases/tag/2022.07.23v1.1)
+
 File|Description
 :---|:---
 [![Windows](https://img.shields.io/badge/Version-v1.0.1-informational?color=f1fa8c&style=for-the-badge&label=release)](https://github.com/sarkinios/sarkui/releases/latest/download/SarkUI.v1.0.1.zip)|Windows (Win10) standalone x64 binary|
