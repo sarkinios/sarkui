@@ -4,7 +4,7 @@
 
 [![Sarkui](https://raw.githubusercontent.com/sarkinios/sarkui/master/.github/banner.png)](#readme)
 
-[![Windows](https://img.shields.io/badge/-Windows_x64-blue.svg?style=for-the-badge&label=Download&logo=windows&color=6272a4)](#release-files)
+[![Windows](https://img.shields.io/badge/-Windows_x64-blue.svg?style=for-the-badge&label=Download&logo=windows&color=6272a4)](#εκδόσεις-αρχείων)
 [![Crypto](https://img.shields.io/badge/_-Crypto-ffb86c.svg?logo=githubsponsors&labelColor=555555&style=for-the-badge&label=Donate)](https://github.com/sarkinios/sarkui/blob/main/.github/donate.md)
 [![ko-fi](https://img.shields.io/badge/_-Buy_me_a_coffee-red.svg?logo=kofi&labelColor=555555&style=for-the-badge)](https://ko-fi.com/sarkas)
 
