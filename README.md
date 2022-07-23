@@ -4,6 +4,7 @@
 [![Sarkui](https://raw.githubusercontent.com/sarkinios/sarkui/master/.github/banner.png)](#readme)
 
 [![Windows](https://img.shields.io/badge/-Windows_x64-blue.svg?style=for-the-badge&label=Download&logo=windows&color=6272a4)](https://github.com/sarkinios/sarkui/releases/latest/download/SarkUI.v1.0.0.zip)
+[![Crypto](https://img.shields.io/badge/_-Crypto-red.svg?logo=githubsponsors&labelColor=555555&style=for-the-badge&label=Donate)](https://github.com/sarkinios/sarkui/blob/main/.github/donate.md)
     
 </div>
 <!-- MANPAGE: END EXCLUDED SECTION -->
