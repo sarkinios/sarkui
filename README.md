@@ -58,6 +58,10 @@ Check that they run correctly from their paths before adding them to SarkUI. (so
 
 After setting the paths you can start using SarkUI.
 
+
+### Setup SarkUI video
+![](https://github.com/sarkinios/sarkui/raw/main/.github/setup%20SarkUI.gif)
+
 # Use
 
 1. Select the filetype you want to work with and drag n Drop / select from browser button multiple files.
