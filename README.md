@@ -50,7 +50,7 @@ needed apps| description | package
 :----------------------|:---------------------:|:-----:
 |- [ffmpeg](https://ffmpeg.org/download.html) | tested with latest release| part of ffmpeg package|
 |- [mkvpropedit](https://www.fosshub.com/MKVToolNix.html) <br /> - [mkvmerge](https://www.fosshub.com/MKVToolNix.html)  <br /> - [mkvextract](https://www.fosshub.com/MKVToolNix.html)  |  tested with latest release|  parts of mkvtoolnix package|
-|- [mp4box](https://gpac.wp.imt.fr/downloads/) |tested with mp4box 0.5.0| part of gpac package|
+|- [mp4box](https://gpac.wp.imt.fr/downloads/) |tested with mp4box 2.0 rev0| part of gpac package|
 |- [sox](https://sourceforge.net/projects/sox/files/sox/) |tested with latest release| sox package|
 
 All these programs can be found free online. You only need to add the installed location of these executables inside SarkUI.
