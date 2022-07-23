@@ -1,4 +1,4 @@
-# Dobate Crypto
+# Donate Crypto - Thank you for your support!
 
 - BitCoin: bc1qn5ua0p32l3vmuaqv9e8jj5r5sjmrcvexqqvutl
 - Etherum: 0x2d652b4eb2f2F45238fFe2d8a19e3681F3A284EF
