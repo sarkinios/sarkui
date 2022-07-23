@@ -72,6 +72,7 @@ After setting the paths you can start using SarkUI.
        - Audio/Sub Renamer: You can include in your video files path subtitle or audio files (srt,mp3,aac etc) and rename/sort them the same as your video files.
          (Due to lexicographic sorting and not natural sort, your sub and audio must have zero in front of their numbering - i.e.  sub 01.srt sub 02.srt etc and not sub 1.srt sub 2.srt otherwise the sorting will not execute correctly) 
          
+![Tabs](https://imgur.com/zdH6V02.png)
          
 #### Release Files
 
