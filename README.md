@@ -43,14 +43,13 @@ Download the zip and extract it. The executable is portable and ready to run.
 Before start using the program you need to configure the location paths under Options for the following programs: 
 needed apps| description | package
 :----------------------|:---------------------:|:-----:
-|- [ffmpeg.exe](https://ffmpeg.org/download.html) | tested with latest release| ffmpeg package|
-|- [mkvpropedit.exe](https://mkvtoolnix.download/downloads.html) <br /> - [mkvmerge.exe](https://mkvtoolnix.download/downloads.html)  <br /> - [mkvextract.exe](https://mkvtoolnix.download/downloads.html)  |  tested with latest release|  mkvtoolnix package|
-|- [mp4box.exe with all dlls](https://gpac.wp.imt.fr/downloads/) |tested with mp4box 0.5.0| gpac package|
-|- [sox.exe with all dlls](https://sourceforge.net/projects/sox/files/sox/) |tested with latest release| sox package|
+|- [ffmpeg](https://ffmpeg.org/download.html) | tested with latest release| part of ffmpeg package|
+|- [mkvpropedit](https://www.fosshub.com/MKVToolNix.html) <br /> - [mkvmerge.exe](https://www.fosshub.com/MKVToolNix.html)  <br /> - [mkvextract.exe](https://www.fosshub.com/MKVToolNix.html)  |  tested with latest release|  parts of mkvtoolnix package|
+|- [mp4box](https://gpac.wp.imt.fr/downloads/) |tested with mp4box 0.5.0| part of gpac package|
+|- [sox](https://sourceforge.net/projects/sox/files/sox/) |tested with latest release| sox package|
 
-
-
-All these programs can be found free online
+All these programs can be found free online. You only need to add the installed location of these executables inside SarkUI.
+Check that they run correctly from their paths before adding them to SarkUI. (sox and mp4box need their dll files, so don't move them outside their installed path)
 
 ![options](https://imgur.com/hY2zdya.png)
 
