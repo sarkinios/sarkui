@@ -83,4 +83,4 @@ Aπαιτούμενες εφαρμογές| περιγραφή | πακέτο
 
 | Αρχείο                                                                                                                                                                                  | Περιγραφή                            |
 | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :----------------------------------- |
-| [![Windows](https://img.shields.io/github/v/release/sarkinios/sarkui?color=f1fa8c&style=for-the-badge)](https://github.com/sarkinios/sarkui/releases/latest/download/SarkUI.v1.0.0.zip) | Windows (Win10) αυτόνομο δυαδικό x64 |
+| [![Windows](https://img.shields.io/github/v/release/sarkinios/sarkui?color=f1fa8c&style=for-the-badge)](https://github.com/sarkinios/sarkui/releases/latest/download/SarkUI.v1.0.0.zip) | Windows (Win10) x64 |
