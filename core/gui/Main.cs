@@ -786,6 +786,7 @@ namespace Sarkui
 
                     textboxes.Add(sform.groupBox1);
                     textboxes.Add(sform.panel1);
+                    var img = resizeImage(Sarkui.Properties.Resources.grave_Image2, new Size(156, 83));
               //      sform.pictureBox1.Image = ((System.Drawing.Image)(img));
               //      sform.pictureBox1.Size = new System.Drawing.Size(156, 83);
 
@@ -1251,7 +1252,7 @@ namespace Sarkui
             }
             else
             {
-                MyMessageBox.Show("Add dirs in Settings first");
+                MyMessageBox.Show("Add exe paths in Options first");
             }
 
 
@@ -1302,7 +1303,7 @@ namespace Sarkui
             }
             else
             {
-                MyMessageBox.Show("Add dirs in Settings first!");
+                MyMessageBox.Show("Add exe paths in Options first!");
             }
         }
 
@@ -1374,7 +1375,7 @@ namespace Sarkui
             }
             else
             {
-                MyMessageBox.Show("Please add dirs in Settings first!");
+                MyMessageBox.Show("Please Add exe paths in Options first!");
             }
         }
         #endregion
@@ -1780,7 +1781,7 @@ namespace Sarkui
                         }
                         else
                         {
-                            MessageBox.Show("Please add dirs in Settings first");
+                            MessageBox.Show("Please Add exe paths in Settings first");
                         }
                     }
         */
@@ -2281,7 +2282,7 @@ namespace Sarkui
             }
             else
             {
-                MyMessageBox.Show("Add dirs in Settings first");
+                MyMessageBox.Show("Add exe paths in Options  first");
             }
         }
 
@@ -2801,7 +2802,7 @@ namespace Sarkui
             }
             else
             {
-                MyMessageBox.Show("Add dirs in Settings first");
+                MyMessageBox.Show("Add exe paths in Options first");
             }
         }
 
@@ -4020,7 +4021,7 @@ namespace Sarkui
                 else
                 {
 
-                    MyMessageBox.Show("Add dirs in Settings first");
+                    MyMessageBox.Show("Add exe paths in Options first");
                 }
             }
             else
@@ -4300,7 +4301,7 @@ namespace Sarkui
 
                             if (checkmp4.Checked)
                             {
-                                mkvprop.StartInfo.Arguments = @" -info -std " + anyCommand;
+                                mkvprop.StartInfo.Arguments = @" -info " + anyCommand;
 
                             }
                             else
@@ -4702,7 +4703,7 @@ namespace Sarkui
             }
             else
             {
-                MyMessageBox.Show("Add dirs in Settings first");
+                MyMessageBox.Show("Add exe paths in Options first");
             }
         }
 
@@ -5113,7 +5114,7 @@ namespace Sarkui
             }
             else
             {
-                MyMessageBox.Show("Add dirs in Settings first");
+                MyMessageBox.Show("Add exe paths in Options first");
             }
         }
 
@@ -5487,7 +5488,7 @@ namespace Sarkui
             }
             else
             {
-                MyMessageBox.Show("Add dirs in Settings first");
+                MyMessageBox.Show("Add exe paths in Options first");
             }
         }
 
@@ -5940,7 +5941,7 @@ namespace Sarkui
             }
             else
             {
-                MyMessageBox.Show("Add dirs in Settings first");
+                MyMessageBox.Show("Add exe paths in Options first");
             }
         }
 
@@ -6215,7 +6216,7 @@ namespace Sarkui
             }
             else
             {
-                MyMessageBox.Show("Add dirs in Settings first");
+                MyMessageBox.Show("Add exe paths in Options first");
             }
         }
 
