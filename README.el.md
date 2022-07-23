@@ -90,6 +90,9 @@ Aπαιτούμενες εφαρμογές| περιγραφή | πακέτο
 Προσθέστε απλά την διαδρομή τους μεσα στο Options.
 (Για την άδεια χρήσης ανατρέξτε στη σελίδα της εκάστοτε εφαρμογής)
 
+[![Changelog](https://img.shields.io/badge/changelog-blue.svg)](https://github.com/sarkinios/sarkui/releases/tag/2022.07.23v1.1)
+
+
 | Αρχείο                                                                                                                                                                                  | Περιγραφή                            |
 | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :----------------------------------- |
 [![Windows](https://img.shields.io/badge/Version-v1.0.1-informational?color=f1fa8c&style=for-the-badge&label=release)](https://github.com/sarkinios/sarkui/releases/latest/download/SarkUI.v1.0.1.zip)|Windows (Win10) standalone x64 binary|
