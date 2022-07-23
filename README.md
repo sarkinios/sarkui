@@ -45,8 +45,8 @@ needed apps| description | package
 :----------------------|:---------------------:|:-----:
 |- [ffmpeg.exe](https://ffmpeg.org/download.html) | tested with latest release| ffmpeg package|
 |- [mkvpropedit.exe](https://mkvtoolnix.download/downloads.html) <br /> - [mkvmerge.exe](https://mkvtoolnix.download/downloads.html)  <br /> - [mkvextract.exe](https://mkvtoolnix.download/downloads.html)  |  tested with latest release|  mkvtoolnix package|
-|- [mp4box.exe](https://gpac.wp.imt.fr/downloads/) |tested with mp4box 0.5.0| gpac package|
-|- [sox.exe](https://sourceforge.net/projects/sox/files/sox/) |tested with latest release| sox package|
+|- [mp4box.exe with all dlls](https://gpac.wp.imt.fr/downloads/) |tested with mp4box 0.5.0| gpac package|
+|- [sox.exe with all dlls](https://sourceforge.net/projects/sox/files/sox/) |tested with latest release| sox package|
 
 
 
