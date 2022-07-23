@@ -9,7 +9,9 @@
 </div>
 <!-- MANPAGE: END EXCLUDED SECTION -->
 
-
+## README Translation
+- [English](README.md)
+- [Ελληνικά](README.el.md)
 
 # Table of Contents
 > * [Introduction](#introduction)
