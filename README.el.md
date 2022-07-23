@@ -4,7 +4,7 @@
 
 [![Sarkui](https://raw.githubusercontent.com/sarkinios/sarkui/master/.github/banner.png)](#readme)
 
-[![Windows](https://img.shields.io/badge/-Windows_x64-blue.svg?style=for-the-badge&label=Download&logo=windows&color=6272a4)](https://github.com/sarkinios/sarkui/releases/latest/download/SarkUI.v1.0.1.zip)
+[![Windows](https://img.shields.io/badge/-Windows_x64-blue.svg?style=for-the-badge&label=Download&logo=windows&color=6272a4)](#release-files)
 [![Crypto](https://img.shields.io/badge/_-Crypto-ffb86c.svg?logo=githubsponsors&labelColor=555555&style=for-the-badge&label=Donate)](https://github.com/sarkinios/sarkui/blob/main/.github/donate.md)
 [![ko-fi](https://img.shields.io/badge/_-Buy_me_a_coffee-red.svg?logo=kofi&labelColor=555555&style=for-the-badge)](https://ko-fi.com/sarkas)
 
@@ -21,7 +21,8 @@
 > -   [Εισαγωγή](#εισαγωγή)
 > -   [Εγκατάσταση](#εγκατάσταση)
 > -   [Χρησιμοποιώντας το SarkUI](#χρήση)
-
+> -   [Εκδόσεις Αρχείων](#εκδόσεις-αρχείων)
+> 
 # Εισαγωγή
 
 Αυτό το λογισμικό δημιουργήθηκε για ευκολία στη χρήση. Είναι μια σύνοψη όλων των προγραμμάτων που χρησιμοποιούνται για εξαγωγή πολυμέσων, muxing (π.χ. mkvtoolnix, mp4box κ.λπ.)
@@ -83,7 +84,11 @@ Aπαιτούμενες εφαρμογές| περιγραφή | πακέτο
 
 ![Tabs](https://imgur.com/zdH6V02.png)
 
-#### Έκδοση Αρχείων
+# Εκδόσεις Αρχείων
+
+#### Το 2ο πακέτο περιλαμβάνει όλα τα απαραίτητα εκτελέσιμα που χρειάζεται το SarkUI για να λειτουργήσει σωστά χωρίς να χρειαστεί να τα κατεβάσετε ξεχωριστά από το ίντερνετ. 
+Προσθέστε απλά την διαδρομή τους μεσα στο Options.
+(Για την άδεια χρήσης ανατρέξτε στη σελίδα της εκάστοτε εφαρμογής)
 
 | Αρχείο                                                                                                                                                                                  | Περιγραφή                            |
 | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :----------------------------------- |
