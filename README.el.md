@@ -4,7 +4,7 @@
 
 [![Sarkui](https://raw.githubusercontent.com/sarkinios/sarkui/master/.github/banner.png)](#readme)
 
-[![Windows](https://img.shields.io/badge/-Windows_x64-blue.svg?style=for-the-badge&label=Download&logo=windows&color=6272a4)](https://github.com/sarkinios/sarkui/releases/latest/download/SarkUI.v1.0.0.zip)
+[![Windows](https://img.shields.io/badge/-Windows_x64-blue.svg?style=for-the-badge&label=Download&logo=windows&color=6272a4)](https://github.com/sarkinios/sarkui/releases/latest/download/SarkUI.v1.0.1.zip)
 [![Crypto](https://img.shields.io/badge/_-Crypto-ffb86c.svg?logo=githubsponsors&labelColor=555555&style=for-the-badge&label=Donate)](https://github.com/sarkinios/sarkui/blob/main/.github/donate.md)
 [![ko-fi](https://img.shields.io/badge/_-Buy_me_a_coffee-red.svg?logo=kofi&labelColor=555555&style=for-the-badge)](https://ko-fi.com/sarkas)
 
@@ -45,7 +45,7 @@
 # Εγκατάσταση
 
 Κατεβάστε το zip και εξαγάγετε το. Το εκτελέσιμο αρχείο είναι έτοιμο για εκτέλεση.
-Πριν ξεκινήσετε να χρησιμοποιείτε το πρόγραμμα, πρέπει να διαμορφώσετε τις διαδρομές τοποθεσίας στο Options για τα ακόλουθα προγράμματα:
+Πριν ξεκινήσετε να χρησιμοποιείτε το πρόγραμμα, πρέπει να διαμορφώσετε τις διαδρομές τοποθεσίας στο Options για ΟΛΑ τα ακόλουθα προγράμματα:
 
 Aπαιτούμενες εφαρμογές| περιγραφή | πακέτο
 :----------------------|:------------------------------------------------------------:|:----:
@@ -87,4 +87,5 @@ Aπαιτούμενες εφαρμογές| περιγραφή | πακέτο
 
 | Αρχείο                                                                                                                                                                                  | Περιγραφή                            |
 | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :----------------------------------- |
-| [![Windows](https://img.shields.io/github/v/release/sarkinios/sarkui?color=f1fa8c&style=for-the-badge)](https://github.com/sarkinios/sarkui/releases/latest/download/SarkUI.v1.0.0.zip) | Windows (Win10) x64 |
+[![Windows](https://img.shields.io/github/v/release/sarkinios/sarkui?color=f1fa8c&style=for-the-badge)](https://github.com/sarkinios/sarkui/releases/latest/download/SarkUI.v1.0.1.zip)|Windows (Win10) standalone x64 binary|
+[![Windows](https://img.shields.io/github/v/release/sarkinios/sarkui?color=f1fa8c&style=for-the-badge)](https://github.com/sarkinios/sarkui/releases/download/2022.07.23v1.1/SarkUI.v1.0.1wTools.zip)|Windows (Win10) standalone x64 binary with ffmpeg/mkvpropedit/mkmerge/mp4box/mkvextract/sox|
