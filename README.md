@@ -18,7 +18,7 @@
 
 # Introduction
 
-This Software made for convienience of use. It's a wrap up of all programs used for media extracting, muxing (i.e. mkvtoolnix, mp4box etc) 
+This Software made for convenience of use. It's a wrap up of all programs used for media extracting, muxing (i.e. mkvtoolnix, mp4box etc) 
 in all-in-one GUI. 
 
 With Sarkui you can add as many files of same type you wish and make changes all at once.
