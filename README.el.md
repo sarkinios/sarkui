@@ -90,7 +90,7 @@ Aπαιτούμενες εφαρμογές| περιγραφή | πακέτο
 Προσθέστε απλά την διαδρομή τους μεσα στο Options.
 (Για την άδεια χρήσης ανατρέξτε στη σελίδα της εκάστοτε εφαρμογής)
 
-[![Changelog](https://img.shields.io/badge/changelog-blue.svg)](https://github.com/sarkinios/sarkui/releases/tag/2022.07.23v1.1)
+[![Changelog](https://img.shields.io/badge/changelog-blue.svg)](https://github.com/sarkinios/sarkui/releases/latest)
 
 
 | Αρχείο                                                                                                                                                                                  | Περιγραφή                            |
