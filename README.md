@@ -94,4 +94,4 @@ Only need to add ALL exe paths in Options to start working with SarKUI.
 File|Description
 :---|:---
 [![Windows](https://img.shields.io/badge/Version-v1.0.2-informational?color=f1fa8c&style=for-the-badge&label=release)](https://github.com/sarkinios/sarkui/releases/latest/download/SarkUI.v1.0.2.zip)|Windows (Win10) standalone x64 binary|
-[![Win](https://img.shields.io/badge/Version-v1.0.2wTools-informational?color=f1fa8c&style=for-the-badge&label=release)](https://github.com/sarkinios/sarkui/releases/download/SarkUI.v1.0.2wTools.zip)|Windows (Win10) standalone x64 binary with ffmpeg/mkvpropedit/mkmerge/mp4box/mkvextract/sox|
+[![Win](https://img.shields.io/badge/Version-v1.0.2wTools-informational?color=f1fa8c&style=for-the-badge&label=release)](https://github.com/sarkinios/sarkui/releases/download/2022.07.25.v1.0.2/SarkUI.v1.0.2.zip)|Windows (Win10) standalone x64 binary with ffmpeg/mkvpropedit/mkmerge/mp4box/mkvextract/sox|
