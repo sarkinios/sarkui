@@ -48,10 +48,10 @@ Before start using the program you need to configure the location paths under Op
 
 needed apps| description | package
 :----------------------|:---------------------:|:-----:
-|- [ffmpeg](https://ffmpeg.org/download.html) | tested with latest release| part of ffmpeg package|
-|- [mkvpropedit](https://www.fosshub.com/MKVToolNix.html) <br /> - [mkvmerge](https://www.fosshub.com/MKVToolNix.html)  <br /> - [mkvextract](https://www.fosshub.com/MKVToolNix.html)  |  tested with latest release|  parts of mkvtoolnix package|
+|- [ffmpeg](https://ffmpeg.org/download.html) | tested with release n5.0.1.8| part of ffmpeg package|
+|- [mkvpropedit](https://www.fosshub.com/MKVToolNix.html) <br /> - [mkvmerge](https://www.fosshub.com/MKVToolNix.html)  <br /> - [mkvextract](https://www.fosshub.com/MKVToolNix.html)  |  tested with release V67|  parts of mkvtoolnix package|
 |- [mp4box](https://gpac.wp.imt.fr/downloads/) |tested with mp4box 2.0 rev0| part of gpac package|
-|- [sox](https://sourceforge.net/projects/sox/files/sox/) |tested with latest release| sox package|
+|- [sox](https://sourceforge.net/projects/sox/files/sox/) |tested with release 14.4.2| sox package|
 
 All these programs can be found free online. You only need to add the installed location of these executables inside SarkUI.
 Check that they run correctly from their paths before adding them to SarkUI. (sox and mp4box need their dll files, so don't move them outside their installed path)
