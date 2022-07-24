@@ -50,10 +50,10 @@
 
 Aπαιτούμενες εφαρμογές| περιγραφή | πακέτο
 :----------------------|:------------------------------------------------------------:|:----:
-|-[ffmpeg](https://ffmpeg.org/download.html)| δοκιμασμένο με την τελευταία έκδοση| μέρος του πακέτου ffmpeg|
-|-[mkvpropedit](https://www.fosshub.com/MKVToolNix.html)<br />-[mkvmerge](https://www.fosshub.com/MKVToolNix.html)<br />-[mkvextract](https://www.fosshub.com/MKVToolNix.html)| δοκιμασμένο με την τελευταία έκδοση| μέρη του πακέτου mkvtoolnix|
-|-[mp4box](https://gpac.wp.imt.fr/downloads/)|δοκιμασμένο με mp4box 0.5.0| μέρος του πακέτου gpac|
-|-[sox](https://sourceforge.net/projects/sox/files/sox/)|δοκιμασμένο με την τελευταία έκδοση| πακέτο sox|
+|-[ffmpeg](https://ffmpeg.org/download.html)| δοκιμασμένο με την έκδοση n5.0.1.8| μέρος του πακέτου ffmpeg|
+|-[mkvpropedit](https://www.fosshub.com/MKVToolNix.html)<br />-[mkvmerge](https://www.fosshub.com/MKVToolNix.html)<br />-[mkvextract](https://www.fosshub.com/MKVToolNix.html)| δοκιμασμένο με την έκδοση V67| μέρη του πακέτου mkvtoolnix|
+|-[mp4box](https://gpac.wp.imt.fr/downloads/)|δοκιμασμένο με mp4box 2.0 rev0| μέρος του πακέτου gpac|
+|-[sox](https://sourceforge.net/projects/sox/files/sox/)|δοκιμασμένο με την έκδοση 14.4.2| πακέτο sox|
 
 Όλα αυτά τα προγράμματα μπορείτε να τα βρείτε δωρεάν στο διαδίκτυο. Χρειάζεται μόνο να προσθέσετε την εγκατεστημένη θέση αυτών των εκτελέσιμων στο SarkUI.
 Ελέγξτε ότι εκτελούνται σωστά από τις διαδρομές τους πριν τις προσθέσετε στο SarkUI. (Το sox και το mp4box χρειάζονται τα αρχεία τους dll, επομένως μην τα μετακινήσετε έξω από την εγκατεστημένη διαδρομή τους)
