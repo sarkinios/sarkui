@@ -89,7 +89,7 @@ After setting the paths you can start using SarkUI.
 Only need to add ALL exe paths in Options to start working with SarKUI.
 (Refer to each application's repo/site for license and fair use)
 
-[![Changelog](https://img.shields.io/badge/changelog-blue.svg)](https://github.com/sarkinios/sarkui/releases/tag/2022.07.23v1.1)
+[![Changelog](https://img.shields.io/badge/changelog-blue.svg)](https://github.com/sarkinios/sarkui/releases/latest)
 
 File|Description
 :---|:---
