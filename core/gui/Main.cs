@@ -1285,7 +1285,7 @@ namespace Sarkui
                         else if (checkmp4.Checked)
                         {
                             mkvprop.StartInfo.FileName = System.IO.Path.GetFullPath(Main.Instance.Settings.mp4boxPath);
-                            mkvprop.StartInfo.Arguments = @" -dump-cover " + anyCommand + @" -out " + mkvprop.StartInfo.WorkingDirectory + @"\cover_" + i + @".jpg"" ";
+                            mkvprop.StartInfo.Arguments = @" -dump-cover " + anyCommand + @" -out " + AddDoubleQuotes(mkvprop.StartInfo.WorkingDirectory) + @"\cover_" + i + @".jpg"" ";
                         }
                         i++;
                         mkvprop.StartInfo.CreateNoWindow = true;
@@ -1685,7 +1685,7 @@ namespace Sarkui
 
                             if (sender == addtitlemeta)
                             {
-                                mkvprop.StartInfo.Arguments = @" -itags name=" + ToLiteral(metaname) + "  " + anyCommand;
+                                mkvprop.StartInfo.Arguments = @" -itags title=" + ToLiteral(metaname) + "  " + anyCommand;
 
                             }
                             else if (sender == addtrackvid)
@@ -1713,15 +1713,15 @@ namespace Sarkui
                         {
 
 
-                            var confirmResult = MessageBox.Show("Are you sure to proceed ?? \nMake Sure # Audio Tracks MATCH file tracks else mp4 will be unstable!!!", "", MessageBoxButtons.YesNo);
-                            if (confirmResult == DialogResult.Yes)
-                            {
+            //                var confirmResult = MessageBox.Show("Are you sure to proceed ?? \nMake Sure # Audio Tracks MATCH file tracks else mp4 will be unstable!!!", "", MessageBoxButtons.YesNo);
+            //                if (confirmResult == DialogResult.Yes)
+            //                {
                                 mkvprop.Start();
-                            }
-                            else
-                            {
-                                mkvprop.Close();
-                            }
+             //               }
+             //               else
+            //                {
+            //                    mkvprop.Close();
+            //                }
 
 
                         }
@@ -2717,16 +2717,17 @@ namespace Sarkui
                            // MyMessageBox.Show(ToDisplay1);
 
                             
-                         //       MyMessageBox.Show(ToDisplay);
-                         //       MyMessageBox.Show(capt);
+                           //     MyMessageBox.Show(ToDisplay);
+                           //     MyMessageBox.Show(capt);
                                 mkvprop.StartInfo.FileName = System.IO.Path.GetFullPath(Main.Instance.Settings.ffmpegPath);
                                 mkvprop.StartInfo.Arguments = @" -y -i " + anyCommand + utfvar + @" -i " + AddDoubleQuotes(newname + @".srt") + @" -map 0:v:0 -map 0:a -map 0:s?  -map 1 -metadata:s:s:" + ToDisplay + @" language=" + slan + @" -vcodec copy -acodec copy " + capt + @" -c:s:1 subrip -disposition:s:" + ToDisplay + @" " + def + @" " + AddDoubleQuotes(dirr + newname + @".mkv");
+                                Console.WriteLine(mkvprop.StartInfo.Arguments);
                             }
                             else
                             {
                                 mkvprop.StartInfo.FileName = System.IO.Path.GetFullPath(Main.Instance.Settings.mkvmergePath);
 
-                                mkvprop.StartInfo.Arguments = @" -o " + AddDoubleQuotes(dirr + newname + @".mkv") + @" " + anyCommand + @" --forced-track 0:" + forced + @" --default-track 0:" + def + @" --track-name 0:" + langu + @" --language 0:" + slan + @" " + AddDoubleQuotes(newname + aext);
+                                mkvprop.StartInfo.Arguments = @" -o " + AddDoubleQuotes(dirr + newname + @".mkv") + @" " +  anyCommand + @" --forced-track 0:" + forced + @" --default-track 0:" + def + @" --track-name 0:" + langu + @" --language 0:" + slan + @" " + AddDoubleQuotes(newname + aext);
 
                             }
 
@@ -4263,12 +4264,12 @@ namespace Sarkui
                     string info;
                     if (checkmp4.Checked)
                     {
-                         info = System.IO.Path.GetDirectoryName(Main.Instance.Settings.mp4boxPath) + @"\mp4box.exe";
+                        info = System.IO.Path.GetDirectoryName(Main.Instance.Settings.mp4boxPath) + @"\mp4box.exe";
 
                     }
                     else
                     {
-                         info = System.IO.Path.GetDirectoryName(Main.Instance.Settings.mkvmergePath) + @"\mkvmergeinfo.exe";
+                        info = System.IO.Path.GetDirectoryName(Main.Instance.Settings.mkvmergePath) + @"\mkvmergeinfo.exe";
                     }
 
 
@@ -4321,19 +4322,23 @@ namespace Sarkui
                             //string output = mkvprop.StandardOutput.ReadToEnd();
                             mkvprop.StartInfo.UseShellExecute = false;
                             mkvprop.StartInfo.RedirectStandardOutput = true;
+                            mkvprop.StartInfo.RedirectStandardError = true;
+                            
 
                             mkvprop.Start();
-
+                            //    Console.WriteLine(mkvprop.StandardOutput.ReadToEnd());
                             List<string> Output = mkvprop.StandardOutput.ReadToEnd().Split('\n').ToList();
-                            foreach (string OutPutLine in Output)
-                            {
 
-                                   MyMessageBox.Show(OutPutLine.ToString());
+                            if (checkmp4.Checked)
+                            {
+                                 Output = mkvprop.StandardError.ReadToEnd().Split('\n').ToList();
 
                             }
+                           
+
                             mkvprop.WaitForExit();
 
-
+                       
 
                             List<string> TrackList1 = new List<string>();
                             List<string> SubTrackList = new List<string>();
@@ -4344,29 +4349,28 @@ namespace Sarkui
 
 
                             int gout = 0;
+                          
 
                             foreach (string OutPutLine in Output)
                             {
                                 gout = gout + 1;
-        //                        MyMessageBox.Show(OutPutLine.ToString());
 
                                 if (checkmp4.Checked)
                                 {
-           //                             MyMessageBox.Show(OutPutLine.ToString());
-
 
                                     if (OutPutLine.Contains("sbtl") || OutPutLine.Contains("text:") || OutPutLine.Contains("subp:"))
                                     {
-                                        string tr = Output[gout - 2];
+                                 //       MyMessageBox.Show(OutPutLine);
+                                        string tr = Output[gout - 4];
                                         //     var ind = OutPutLine.IndexOf("sbtl");
                                         //   MyMessageBox.Show(OutPutLine[ind].ToString());
                                         int position = tr.IndexOf("#");
-                                        TrackList1.Add(tr.Substring(position+1,2));
-                                 //       MyMessageBox.Show(TrackList1[0].ToString());
+                                        TrackList1.Add(tr.Substring(position + 7, 2));
+                                        //       MyMessageBox.Show(TrackList1[0].ToString());
                                         SubTrackList.Add(OutPutLine);
 
-                                   //     MyMessageBox.Show(TrackList1.IndexOf("sbtl",0).ToString());
-                             //           MyMessageBox.Show(OutPutLine);
+                                        //     MyMessageBox.Show(TrackList1.IndexOf("sbtl",0).ToString());
+                               //                 MyMessageBox.Show(OutPutLine);
                                     }
                                 }
                                 else
@@ -4383,7 +4387,7 @@ namespace Sarkui
 
                                 }
 
-                            
+
 
                             }
 
@@ -4413,7 +4417,7 @@ namespace Sarkui
 
                                     if (!checkmp4.Checked)
                                     {
-                                    
+
                                         keeptrack1 = new string(Track.SkipWhile(c => !char.IsDigit(c))
                                                                            .TakeWhile(c => char.IsDigit(c))
                                                                            .ToArray());
@@ -4427,12 +4431,12 @@ namespace Sarkui
                                     }
                                     else
                                     {
-                                    //    MyMessageBox.Show(Track);
+                                        //    MyMessageBox.Show(Track);
 
                                         found = Track.IndexOf("Language");
                                         string end = Track.Substring(found + 10, 3);
                                         lang.Add(end);
-                                    //    MyMessageBox.Show(end);
+                                        //    MyMessageBox.Show(end);
                                     }
 
 
@@ -4440,8 +4444,8 @@ namespace Sarkui
 
 
 
-                                    
-                                   
+
+
 
 
                                     if (Track.Contains("PGS"))
@@ -4501,16 +4505,16 @@ namespace Sarkui
                                     string lan = lang.ElementAt(j - 1);
 
                                     Process execute = new Process();
-                         //           execute.StartInfo.FileName = System.IO.Path.GetFullPath(Main.Instance.Settings.mkvextPath);
+                                    //           execute.StartInfo.FileName = System.IO.Path.GetFullPath(Main.Instance.Settings.mkvextPath);
                                     execute.StartInfo.WorkingDirectory = System.IO.Path.GetDirectoryName(FileName);
                                     FileUtil.ensureDirectoryExists(execute.StartInfo.WorkingDirectory);
                                     string subdir = System.IO.Path.GetDirectoryName(FileName) + @"\[subs]";
                                     FileUtil.ensureDirectoryExists(subdir);
 
-                                    if(checkmp4.Checked)
+                                    if (checkmp4.Checked)
                                     {
                                         execute.StartInfo.FileName = System.IO.Path.GetFullPath(Main.Instance.Settings.mp4boxPath);
-                                        execute.StartInfo.Arguments = @" -raw " + sub + @" " + anyCommand + @" -out " +  AddDoubleQuotes(subdir + @"\" + newname + @"-track" + sub + @"-" + lan + ex1);
+                                        execute.StartInfo.Arguments = @" -raw " + sub + @" " + anyCommand + @" -out " + AddDoubleQuotes(subdir + @"\" + newname + @"-track" + sub + @"-" + lan + ex1);
 
                                     }
                                     else
@@ -4520,7 +4524,7 @@ namespace Sarkui
                                         execute.StartInfo.Arguments = @" tracks " + anyCommand + @" " + sub + @":" + AddDoubleQuotes(subdir + @"\" + newname + @"-track" + sub + @"-" + lan + ex1);
 
                                     }
-                            //            MyMessageBox.Show(execute.StartInfo.Arguments);
+                                    //    MyMessageBox.Show(execute.StartInfo.Arguments);
                                     execute.StartInfo.CreateNoWindow = true;
                                     execute.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
                                     execute.Start();
@@ -4545,27 +4549,27 @@ namespace Sarkui
                                 foreach (string Track in SubTrackList)
                                 {
 
-                                    if (Track.Contains(@":" + langu) || Track.Contains(@":" + slan3) || Track.Contains(@":" + slan4) || Track.Contains(@"Language "+@"""" + langu))
+                                    if (Track.Contains(@":" + langu) || Track.Contains(@":" + slan3) || Track.Contains(@":" + slan4) || Track.Contains(@"Language " + @"""" + langu))
                                     {
                                         ++i;
                                         ++fi;
 
                                         if (!checkmp4.Checked)
-                                        { 
-
-                                        keeptrack1 = new string(Track.SkipWhile(c => !char.IsDigit(c))
-                                        .TakeWhile(c => char.IsDigit(c))
-                                        .ToArray()); ;
-
-
-                                        keeps1.Add(keeptrack1);
-
-
-                                         }
-                                         else
                                         {
-                                      //      MyMessageBox.Show(TrackList1[fi -1].ToString());
-                                            keeps1.Add(TrackList1[fi-1]);
+
+                                            keeptrack1 = new string(Track.SkipWhile(c => !char.IsDigit(c))
+                                            .TakeWhile(c => char.IsDigit(c))
+                                            .ToArray()); ;
+
+
+                                            keeps1.Add(keeptrack1);
+
+
+                                        }
+                                        else
+                                        {
+                                            //      MyMessageBox.Show(TrackList1[fi -1].ToString());
+                                            keeps1.Add(TrackList1[fi - 1]);
                                         }
 
 
@@ -4580,7 +4584,7 @@ namespace Sarkui
 
 
 
-                                    if (Track.Contains("PGS"))
+                                        if (Track.Contains("PGS"))
                                         {
                                             keepext1.Add(".sup");
                                         }
@@ -4657,7 +4661,7 @@ namespace Sarkui
 
                                         if (checkmp4.Checked)
                                         {
-                                 //           MyMessageBox.Show(slan4);
+                                            //           MyMessageBox.Show(slan4);
                                             execute.StartInfo.FileName = System.IO.Path.GetFullPath(Main.Instance.Settings.mp4boxPath);
                                             execute.StartInfo.Arguments = @" -srt " + sub + @" " + anyCommand + @" -out " + AddDoubleQuotes(subdir + @"\" + newname + @"-track" + sub + @"-" + slan4 + ex1);
 
@@ -4666,8 +4670,8 @@ namespace Sarkui
                                         {
                                             execute.StartInfo.Arguments = @" tracks " + anyCommand + @" " + sub + @":" + AddDoubleQuotes(subdir + @"\" + newname + @"-" + slan4 + num + ex1);
                                         }
-                                            
-                                            //    MyMessageBox.Show(execute.StartInfo.Arguments);
+
+                                        //    MyMessageBox.Show(execute.StartInfo.Arguments);
                                         execute.StartInfo.CreateNoWindow = true;
                                         execute.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
                                         execute.Start();
@@ -4703,7 +4707,7 @@ namespace Sarkui
             }
             else
             {
-                MyMessageBox.Show("Add exe paths in Options first");
+                MyMessageBox.Show("Add dirs in Settings first");
             }
         }
 
