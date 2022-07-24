@@ -575,6 +575,7 @@ namespace Sarkui
             //      radioButtonList1.SetSelected(0, true);
             this.radioButtonList1.Enabled = false;
             listBox1.Items.Clear();
+            
             radioButtonList2.SetSelected(0, true);
 
 
@@ -1004,6 +1005,23 @@ namespace Sarkui
         }
 
 
+        public sealed class NaturalStringComparer : IComparer<string>
+        {
+            public int Compare(string a, string b)
+            {
+                return SafeNativeMethods.StrCmpLogicalW(a, b);
+            }
+        }
+
+        public sealed class NaturalFileInfoNameComparer : IComparer<FileInfo>
+        {
+            public int Compare(FileInfo a, FileInfo b)
+            {
+                return SafeNativeMethods.StrCmpLogicalW(a.Name, b.Name);
+            }
+        }
+
+
 
         private void listBox1_DragDrop(object sender, DragEventArgs e)
         {
@@ -1061,10 +1079,9 @@ namespace Sarkui
                     {
                         j++;
                     }
-
-                    listBox1.Sorted = true;
+                  
+                    listBox1.Sorted = false;
                 }
-
 
             }
             if (j != 0)
@@ -1072,6 +1089,22 @@ namespace Sarkui
                 MyMessageBox.Show("Change Container / found " + j + @" wrong extensions out of " + m + " files");
                 i++;
             }
+
+
+            NaturalStringComparer com = new NaturalStringComparer();
+
+            string[] clist = listBox1.Items.OfType<string>().ToArray();
+            Array.Sort(clist, com.Compare);
+            listBox1.Items.Clear();
+            for (int ir = 0; ir < clist.Length; ir++)
+            {
+                listBox1.Items.Add(clist[ir].ToString());
+            }
+       
+
+
+
+
 
         }
 
@@ -2208,7 +2241,7 @@ namespace Sarkui
 
 
 
-
+                    int ind = 0;
 
                     foreach (string FileName in listBox1.Items)
                     {
@@ -2218,26 +2251,46 @@ namespace Sarkui
                         string newname = System.IO.Path.GetFileNameWithoutExtension(FileName);
                         mkvprop.StartInfo.FileName = System.IO.Path.GetFullPath(Main.Instance.Settings.ffmpegPath);
 
+                        
                         if (radioButtonList2.SelectedIndex == 0)
                         {
-                            //   mkvprop.StartInfo.WorkingDirectory = System.IO.Path.GetDirectoryName(FileName) + @"\newMKV";
-                            mkvprop.StartInfo.WorkingDirectory = System.IO.Path.GetDirectoryName(FileName);
-                            int countfiles = mkvprop.StartInfo.WorkingDirectory.Length;
-                            FileUtil.ensureDirectoryExists(mkvprop.StartInfo.WorkingDirectory);
-                            if (checkavi.Checked | checkts.Checked)
+                            if (File.Exists(System.IO.Path.GetDirectoryName(FileName) + @"\" + newname + @".mkv"))
                             {
-                                //   mkvprop.StartInfo.Arguments = @" -y -ss 0:01 -fflags +genpts -i " + anyCommand + @" -c:v copy -c:a copy " + AddDoubleQuotes(newname + @".mkv");
-                                mkvprop.StartInfo.FileName = System.IO.Path.GetFullPath(Main.Instance.Settings.mkvmergePath);
-                                mkvprop.StartInfo.Arguments = @" -o  " + AddDoubleQuotes(newname + @".mkv") + @" " + anyCommand;
-
+                                MyMessageBox.Show(newname + ".mkv already exist.");
                             }
                             else
                             {
-                                mkvprop.StartInfo.Arguments = @" -i " + anyCommand + @" -map 0 -vcodec copy -acodec copy -metadata:s vendor_id= " + AddDoubleQuotes(newname + @".mkv");
-                                //  mkvprop.StartInfo.Arguments = @" -i " + anyCommand + @" -map 0 -vcodec copy -acodec copy -map_metadata 0 " + AddDoubleQuotes(newname + @".mkv");
+                                if (checkmkv.Checked)
+                                {
+                                    ind++;
 
-                                // -map 0 - map 1 - c copy - c:v: 1 png - disposition:v: 1 attached_pic out.mp4
+                                }
+                                else
+                                {
 
+                                    //   mkvprop.StartInfo.WorkingDirectory = System.IO.Path.GetDirectoryName(FileName) + @"\newMKV";
+                                    mkvprop.StartInfo.WorkingDirectory = System.IO.Path.GetDirectoryName(FileName);
+                                    int countfiles = mkvprop.StartInfo.WorkingDirectory.Length;
+                                    FileUtil.ensureDirectoryExists(mkvprop.StartInfo.WorkingDirectory);
+                                    if (checkavi.Checked | checkts.Checked)
+                                    {
+                                        //   mkvprop.StartInfo.Arguments = @" -y -ss 0:01 -fflags +genpts -i " + anyCommand + @" -c:v copy -c:a copy " + AddDoubleQuotes(newname + @".mkv");
+                                        mkvprop.StartInfo.FileName = System.IO.Path.GetFullPath(Main.Instance.Settings.mkvmergePath);
+                                        mkvprop.StartInfo.Arguments = @" -o  " + AddDoubleQuotes(newname + @".mkv") + @" " + anyCommand;
+
+                                    }
+                                    else
+                                    {
+                                        mkvprop.StartInfo.Arguments = @" -i " + anyCommand + @" -map 0 -vcodec copy -acodec copy -metadata:s vendor_id= " + AddDoubleQuotes(newname + @".mkv");
+                                        //  mkvprop.StartInfo.Arguments = @" -i " + anyCommand + @" -map 0 -vcodec copy -acodec copy -map_metadata 0 " + AddDoubleQuotes(newname + @".mkv");
+
+                                        // -map 0 - map 1 - c copy - c:v: 1 png - disposition:v: 1 attached_pic out.mp4
+
+                                    }
+
+
+
+                                }
                             }
                         }
                         else if (radioButtonList2.SelectedIndex == 1)
@@ -2245,17 +2298,25 @@ namespace Sarkui
                             //  mkvprop.StartInfo.WorkingDirectory = System.IO.Path.GetDirectoryName(FileName) + @"\newMP4";
                             mkvprop.StartInfo.WorkingDirectory = System.IO.Path.GetDirectoryName(FileName);
                             FileUtil.ensureDirectoryExists(mkvprop.StartInfo.WorkingDirectory);
-                            if (checkavi.Checked | checkts.Checked)
+                            if (File.Exists(System.IO.Path.GetDirectoryName(FileName) + @"\" + newname + @".mp4"))
                             {
-                                mkvprop.StartInfo.Arguments = @" -fflags +genpts -i " + anyCommand + @" -c:v copy -c:a copy " + AddDoubleQuotes(newname + @".mp4");
-
+                                MyMessageBox.Show(newname +".mp4 already exist.");
                             }
                             else
                             {
-                                mkvprop.StartInfo.Arguments = @" -i " + anyCommand + @" -map 0 -map -0:s -c copy " + AddDoubleQuotes(newname + @".mp4");
+                                if (checkavi.Checked | checkts.Checked)
+                                {
+                                    mkvprop.StartInfo.Arguments = @" -fflags +genpts -i " + anyCommand + @" -c:v copy -c:a copy " + AddDoubleQuotes(newname + @".mp4");
 
+                                }
+                                else
+                                {
+                                      mkvprop.StartInfo.Arguments = @" -i " + anyCommand + @" -map 0 -map -0:s -c copy " + AddDoubleQuotes(newname + @".mp4");
+
+                                }
                             }
                         }
+                    
 
                         mkvprop.StartInfo.CreateNoWindow = true;
                         mkvprop.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
@@ -2272,6 +2333,11 @@ namespace Sarkui
 
                         cnt++;
                         Cursor.Current = Cursors.Default;
+
+                    }
+                    if (ind > 0)
+                    {
+                        MyMessageBox.Show("You Are trying to convert the same container!");
 
                     }
                 }
@@ -2716,12 +2782,9 @@ namespace Sarkui
                             
                            // MyMessageBox.Show(ToDisplay1);
 
-                            
-                           //     MyMessageBox.Show(ToDisplay);
                            //     MyMessageBox.Show(capt);
                                 mkvprop.StartInfo.FileName = System.IO.Path.GetFullPath(Main.Instance.Settings.ffmpegPath);
                                 mkvprop.StartInfo.Arguments = @" -y -i " + anyCommand + utfvar + @" -i " + AddDoubleQuotes(newname + @".srt") + @" -map 0:v:0 -map 0:a -map 0:s?  -map 1 -metadata:s:s:" + ToDisplay + @" language=" + slan + @" -vcodec copy -acodec copy " + capt + @" -c:s:1 subrip -disposition:s:" + ToDisplay + @" " + def + @" " + AddDoubleQuotes(dirr + newname + @".mkv");
-                                Console.WriteLine(mkvprop.StartInfo.Arguments);
                             }
                             else
                             {
@@ -2792,7 +2855,7 @@ namespace Sarkui
                     if (au > 0)
                     {
 
-                        MyMessageBox.Show(au + " files out of " + listBox1.Items.Count + @" don't have audio or Audio files have different name");
+                        MyMessageBox.Show(au + " files out of " + listBox1.Items.Count + @" don't have subtitle or Subtitle files have different name");
                     }
 
                 }
@@ -4360,7 +4423,6 @@ namespace Sarkui
 
                                     if (OutPutLine.Contains("sbtl") || OutPutLine.Contains("text:") || OutPutLine.Contains("subp:"))
                                     {
-                                 //       MyMessageBox.Show(OutPutLine);
                                         string tr = Output[gout - 4];
                                         //     var ind = OutPutLine.IndexOf("sbtl");
                                         //   MyMessageBox.Show(OutPutLine[ind].ToString());
@@ -4370,7 +4432,6 @@ namespace Sarkui
                                         SubTrackList.Add(OutPutLine);
 
                                         //     MyMessageBox.Show(TrackList1.IndexOf("sbtl",0).ToString());
-                               //                 MyMessageBox.Show(OutPutLine);
                                     }
                                 }
                                 else
@@ -4390,6 +4451,10 @@ namespace Sarkui
 
 
                             }
+
+
+
+
 
                             int i = 0;
                             string keeptrack1 = "";
@@ -4431,12 +4496,10 @@ namespace Sarkui
                                     }
                                     else
                                     {
-                                        //    MyMessageBox.Show(Track);
 
                                         found = Track.IndexOf("Language");
                                         string end = Track.Substring(found + 10, 3);
                                         lang.Add(end);
-                                        //    MyMessageBox.Show(end);
                                     }
 
 
@@ -4514,8 +4577,7 @@ namespace Sarkui
                                     if (checkmp4.Checked)
                                     {
                                         execute.StartInfo.FileName = System.IO.Path.GetFullPath(Main.Instance.Settings.mp4boxPath);
-                                        execute.StartInfo.Arguments = @" -raw " + sub + @" " + anyCommand + @" -out " + AddDoubleQuotes(subdir + @"\" + newname + @"-track" + sub + @"-" + lan + ex1);
-
+                                        execute.StartInfo.Arguments = @" -srt " + sub + @" " + anyCommand + @" -out " + AddDoubleQuotes(subdir + @"\" + newname + @"-track" + sub + @"-" + lan + ex1);
                                     }
                                     else
                                     {
@@ -4524,7 +4586,6 @@ namespace Sarkui
                                         execute.StartInfo.Arguments = @" tracks " + anyCommand + @" " + sub + @":" + AddDoubleQuotes(subdir + @"\" + newname + @"-track" + sub + @"-" + lan + ex1);
 
                                     }
-                                    //    MyMessageBox.Show(execute.StartInfo.Arguments);
                                     execute.StartInfo.CreateNoWindow = true;
                                     execute.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
                                     execute.Start();
@@ -4548,11 +4609,12 @@ namespace Sarkui
 
                                 foreach (string Track in SubTrackList)
                                 {
-
+                                    ++fi;
                                     if (Track.Contains(@":" + langu) || Track.Contains(@":" + slan3) || Track.Contains(@":" + slan4) || Track.Contains(@"Language " + @"""" + langu))
                                     {
+
                                         ++i;
-                                        ++fi;
+                                        
 
                                         if (!checkmp4.Checked)
                                         {
@@ -4564,12 +4626,11 @@ namespace Sarkui
 
                                             keeps1.Add(keeptrack1);
 
-
                                         }
                                         else
                                         {
-                                            //      MyMessageBox.Show(TrackList1[fi -1].ToString());
                                             keeps1.Add(TrackList1[fi - 1]);
+
                                         }
 
 
@@ -4661,7 +4722,6 @@ namespace Sarkui
 
                                         if (checkmp4.Checked)
                                         {
-                                            //           MyMessageBox.Show(slan4);
                                             execute.StartInfo.FileName = System.IO.Path.GetFullPath(Main.Instance.Settings.mp4boxPath);
                                             execute.StartInfo.Arguments = @" -srt " + sub + @" " + anyCommand + @" -out " + AddDoubleQuotes(subdir + @"\" + newname + @"-track" + sub + @"-" + slan4 + ex1);
 
@@ -4671,7 +4731,6 @@ namespace Sarkui
                                             execute.StartInfo.Arguments = @" tracks " + anyCommand + @" " + sub + @":" + AddDoubleQuotes(subdir + @"\" + newname + @"-" + slan4 + num + ex1);
                                         }
 
-                                        //    MyMessageBox.Show(execute.StartInfo.Arguments);
                                         execute.StartInfo.CreateNoWindow = true;
                                         execute.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
                                         execute.Start();
@@ -4799,7 +4858,6 @@ namespace Sarkui
                             //      string dirr = System.IO.Path.GetDirectoryName(FileName) + @"\newMKV\";
                             //       FileUtil.ensureDirectoryExists(dirr);
                             mkvprop.StartInfo.Arguments = @" --identify-verbose " + anyCommand;
-                            //    MyMessageBox.Show(mkvprop.StartInfo.Arguments);
 
                             string dir = System.IO.Path.GetDirectoryName(FileName);
 
@@ -4934,10 +4992,6 @@ namespace Sarkui
                                                                                                        
                                      var aud1 = Int32.Parse(aud)-1;
 
-                              //       MyMessageBox.Show(aud.ToString());
-                              //          MyMessageBox.Show(lan);
-
-
 
                                         execute.StartInfo.FileName = System.IO.Path.GetFullPath(Main.Instance.Settings.ffmpegPath);
                                       execute.StartInfo.Arguments = @" -y -i " + anyCommand + @" -vn -acodec copy -map 0:" + aud + @" " + AddDoubleQuotes(newdir + @"\" + newname + @"-track" + aud + @"-" + lan + ex2);
@@ -4952,7 +5006,6 @@ namespace Sarkui
                                       execute.StartInfo.FileName = System.IO.Path.GetFullPath(Main.Instance.Settings.mkvextPath);
 
                                       execute.StartInfo.Arguments = @" tracks " + anyCommand + @" " + aud + @":" + AddDoubleQuotes(newdir + @"\" + newname + @"-track" + aud + @"-" + lan + ex2);
-
 
 
                                     }
@@ -5061,9 +5114,6 @@ namespace Sarkui
 
                                         if (checkmp4.Checked)
                                         {
-                                            //       MyMessageBox.Show(aud);
-
-
 
                                             var aud1 = Int32.Parse(aud) - 1;
                                             execute.StartInfo.FileName = System.IO.Path.GetFullPath(Main.Instance.Settings.ffmpegPath);
@@ -5366,7 +5416,6 @@ namespace Sarkui
                                 {
                                     if (OutPutLine.Contains("Track") & OutPutLine.Contains("subtitles"))
                                     {
-
                                         TrackList1.Add(OutPutLine.Substring(TheIndexOfTrackNum, 1));
                                         SubTrackList.Add(OutPutLine);
 
@@ -5451,8 +5500,6 @@ namespace Sarkui
 
 
 
-
-                                    //    MyMessageBox.Show(execute.StartInfo.Arguments);
                                     execute.StartInfo.CreateNoWindow = true;
                                     execute.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
                                     execute.Start();
@@ -6139,12 +6186,10 @@ namespace Sarkui
                                 ToDisplay = "0";
                             }
 
-
-                            // MyMessageBox.Show(ToDisplay1);
+                                // MyMessageBox.Show(ToDisplay1);
 
                             if (checkmp4.Checked)
                             {
-                                //       MyMessageBox.Show(ToDisplay);
                                 //       MyMessageBox.Show(capt);
                                 mkvprop.StartInfo.FileName = System.IO.Path.GetFullPath(Main.Instance.Settings.ffmpegPath);
                                 mkvprop.StartInfo.Arguments = @" -y -i " + anyCommand + @" -i " + AddDoubleQuotes(newname + aext) + @" -map 0:v:0 -map 0:a -map 0:s?  -map 1 -metadata:s:a:" + ToDisplay + @" language=" + slan + @" -vcodec copy -acodec copy " + @" -disposition:a:" + ToDisplay + @" " + def + @" " + AddDoubleQuotes(dirr + newname + @".mkv");
@@ -6352,7 +6397,6 @@ namespace Sarkui
                         string renameddir = f.DirectoryName;
                         string newName = f.Name.Replace(f.ToString(), videolist[k]);
                         newName = renameddir + @"\" + newName + ext;
-                        //          MyMessageBox.Show(newName);
 
                         File.Move(f.FullName, newName);
                         k++;
@@ -6367,7 +6411,6 @@ namespace Sarkui
                         string renameddir = f.DirectoryName;
                         string newName = f.Name.Replace(f.ToString(), videolist[k]);
                         newName = renameddir + @"\" + newName + ext;
-                        //          MyMessageBox.Show(newName);
 
                         File.Move(f.FullName, newName);
                         k++;
@@ -6379,7 +6422,6 @@ namespace Sarkui
                         string renameddir = f.DirectoryName;
                         string newName = f.Name.Replace(f.ToString(), videolist[k]);
                         newName = renameddir + @"\" + newName + ext;
-                        //          MyMessageBox.Show(newName);
 
                         File.Move(f.FullName, newName);
                         k++;
@@ -6401,7 +6443,6 @@ namespace Sarkui
                         string renameddir = f.DirectoryName;
                         string newName = f.Name.Replace(f.ToString(), videolist[k]);
                         newName = renameddir + @"\" + newName + ext;
-                        //          MyMessageBox.Show(newName);
 
                         File.Move(f.FullName, newName);
                         k++;
@@ -6418,7 +6459,6 @@ namespace Sarkui
                         string renameddir = f.DirectoryName;
                         string newName = f.Name.Replace(f.ToString(), videolist[k]);
                         newName = renameddir + @"\" + newName + ext;
-                        //          MyMessageBox.Show(newName);
 
                         File.Move(f.FullName, newName);
                         k++;
@@ -6450,7 +6490,6 @@ namespace Sarkui
                                 string renameddir = f.DirectoryName;
                                 string newName = f.Name.Replace(f.ToString(), videolist[k]);
                                 newName = renameddir + @"\" + newName + ext;
-                                //          MyMessageBox.Show(newName);
 
                                 File.Move(f.FullName, newName);
                                 k++;
@@ -6467,7 +6506,6 @@ namespace Sarkui
                                 string renameddir = f.DirectoryName;
                                 string newName = f.Name.Replace(f.ToString(), videolist[k]);
                                 newName = renameddir + @"\" + newName + ext;
-                                //          MyMessageBox.Show(newName);
 
                                 File.Move(f.FullName, newName);
                                }
@@ -6570,7 +6608,6 @@ namespace Sarkui
                         string renameddir = f.DirectoryName;
                         string newName = f.Name.Replace(f.ToString(), videolist[k]);
                         newName = renameddir + @"\" + newName + ext;
-                        //          MyMessageBox.Show(newName);
 
                         File.Move(f.FullName, newName);
                         k++;
@@ -6585,7 +6622,6 @@ namespace Sarkui
                         string renameddir = f.DirectoryName;
                         string newName = f.Name.Replace(f.ToString(), videolist[k]);
                         newName = renameddir + @"\" + newName + ext;
-                        //          MyMessageBox.Show(newName);
 
                         File.Move(f.FullName, newName);
                         k++;
@@ -6602,7 +6638,6 @@ namespace Sarkui
                         string renameddir = f.DirectoryName;
                         string newName = f.Name.Replace(f.ToString(), videolist[k]);
                         newName = renameddir + @"\" + newName + ext;
-                        //          MyMessageBox.Show(newName);
 
                         File.Move(f.FullName, newName);
                         k++;
@@ -6619,7 +6654,6 @@ namespace Sarkui
                         string renameddir = f.DirectoryName;
                         string newName = f.Name.Replace(f.ToString(), videolist[k]);
                         newName = renameddir + @"\" + newName + ext;
-                        //          MyMessageBox.Show(newName);
 
                         File.Move(f.FullName, newName);
                         k++;
@@ -6645,7 +6679,6 @@ namespace Sarkui
                             string renameddir = f.DirectoryName;
                             string newName = f.Name.Replace(f.ToString(), videolist[k]);
                             newName = renameddir + @"\" + newName + ext;
-                            //          MyMessageBox.Show(newName);
 
                             File.Move(f.FullName, newName);
                             k++;
