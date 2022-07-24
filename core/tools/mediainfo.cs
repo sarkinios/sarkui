@@ -300,4 +300,27 @@ namespace Sarkui
         public String Option(String Option_) { return Option(Option_, ""); }
         public int Count_Get(int FilePos, StreamKind StreamKind) { return Count_Get(FilePos, StreamKind, -1); }
     }
+
+
+
+
+
+
+
+
+
+
+
+
+    internal static class SafeNativeMethods
+    {
+        [DllImport("shlwapi.dll", CharSet = CharSet.Unicode)]
+        public static extern int StrCmpLogicalW(string psz1, string psz2);
+    }
+
+
+ 
+
+
+
 } //NameSpace
