@@ -2,8 +2,8 @@
 
 |||
 :--|:--:
-|- **BitCoin**: |bc1qn5ua0p32l3vmuaqv9e8jj5r5sjmrcvexqqvutl|
-|- **Etherum**: |0x2d652b4eb2f2F45238fFe2d8a19e3681F3A284EF|
-|- **Cardano**: |addr1q8c5npj0l7rshgaf40qcg8h8sqq45engjw5vg5k8jjwj7n03fxryllu8pw36n27pss0w0qqptfnx3yagc3fv09ya9axsvjxfyr|
-|- **Solana**: |7ZJwLmq6grCCNrYR4Tu5U83mdWvL5sPzQ47dg7hKKZcp|
+|- **BitCoin**: |bc1q07cx5e949r92e9cez2ru0967ts5p262r69ar3f|
+|- **Etherum**: |0xDc3e2fBc9C52253f8C81df1dE7D5a6915CD8a675|
+|- **Cardano**: |addr1q9j39r6exp4d8q66ftlg5q7jjlkna629dctfsqfgmdmxhzr9z284jvr26wp45jh73gpa99ld8m552msknqqj3kmkdwyq6w2rj9|
+|- **Solana**: |2iSD4QMhJ6zsSweZhp72C9HxyZmUHe82P4ZttYSsJZnh|
 ||
